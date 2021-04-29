@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Ninja to Cat</title>
+        <meta name="description" content="This nifty website will change a ninja into a cat!">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    </head>
+    <body>
+        <div id="container">
+            <div>
+                <img src="img/ninja0.png" alt="image" data-ninjaOrCat="ninja" data-cat-src="img/cat0.png" data-ninja-src="img/ninja0.png"/>
+            </div>
+            <div>
+                <img src="img/ninja1.png" alt="image" data-ninjaOrCat="ninja" data-cat-src="img/cat1.png" data-ninja-src="img/ninja1.png"/>
+            </div>
+            <div>
+                <img src="img/ninja2.png" alt="image" data-ninjaOrCat="ninja" data-cat-src="img/cat2.png" data-ninja-src="img/ninja2.png"/>
+            </div>
+            <div>
+                <img src="img/ninja3.png" alt="image" data-ninjaOrCat="ninja" data-cat-src="img/cat3.png" data-ninja-src="img/ninja3.png"/>
+            </div>
+            <div>
+                <img src="img/ninja4.png" alt="image" data-ninjaOrCat="ninja" data-cat-src="img/cat4.png" data-ninja-src="img/ninja4.png"/>
+            </div>
+        </div>
+        <script>
+            $(function(){
+                $('img').click(function(){
+                    if ( $(this).attr("data-ninjaOrCat") == "ninja" ){
+                        $(this).attr("src", function(){
+                            return $(this).attr("data-cat-src");
+                        });
+                        $(this).attr("data-ninjaOrCat", "cat");
+                        //console.log($(this).attr("data-ninjaOrCat"));
+                        //console.log($(this).attr("src"));
+                    }
+                    else if ( $(this).attr("data-ninjaOrCat") == "cat" ) {
+                        $(this).attr("src", function(){
+                            return $(this).attr("data-ninja-src");
+                        });
+                        $(this).attr("data-ninjaOrCat", "ninja");
+                        //console.log($(this).attr("data-ninjaOrCat"));
+                        //console.log($(this).attr("src"));
+                    }
+                });
+            });
+        </script>.
+    </body>
+</html>
